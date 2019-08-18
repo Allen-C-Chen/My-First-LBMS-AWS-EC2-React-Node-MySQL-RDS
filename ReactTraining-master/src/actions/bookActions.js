@@ -2,10 +2,16 @@
 import Dispatcher from '../dispatcher/appDispatcher.js';
 import axios from 'axios'
 import { ErrorBoundary } from '../components/ErrorBoundary.js';
+var hostFile = require('./hostNames.json');
+
+//const hostData = hostFile.LocalHost + hostFile.LocalHostPort; //local host
+const hostData = hostFile.Host + hostFile.HostPort; //aws host
+
 //Here add all crud actions for Books
+console.log(hostData);
 const BooksActions = {
     readBooks: function(){
-        axios.get('http://localhost:3000/book')
+        axios.get(hostData + '/book')
         .then(res => {
             Dispatcher.dispatch({
             actionType: 'READ_BOOK_SUCCESS',
@@ -20,7 +26,7 @@ const BooksActions = {
         });
     },
     deleteBook: function(newBook){
-        axios.delete('http://localhost:3000/book/' + newBook.book_id)
+        axios.delete(hostData + '/book/' + newBook.book_id)
         .then(res => {
             Dispatcher.dispatch({
                 actionType: 'DELETE_BOOK_SUCCESS',
