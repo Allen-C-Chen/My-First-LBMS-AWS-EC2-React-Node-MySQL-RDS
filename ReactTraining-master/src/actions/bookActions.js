@@ -2,7 +2,7 @@
 import Dispatcher from '../dispatcher/appDispatcher.js';
 import axios from 'axios'
 import { ErrorBoundary } from '../components/ErrorBoundary.js';
-var hostFile = require('./hostNames.json');
+var hostFile = require('../../hostNames.json');
 
 //const hostData = hostFile.LocalHost + hostFile.NodePort; //local host
 const hostData = hostFile.AmazonHostUrl + hostFile.NodePort  ; //aws host

@@ -1,7 +1,7 @@
 
 import Dispatcher from '../dispatcher/appDispatcher.js';
 import axios from 'axios'
-var hostFile = require('./hostNames.json');
+var hostFile = require('../../hostNames.json');
 
 //Here add all crud actions for Authors
 //const hostData = hostFile.LocalHost + hostFile.NodePort; //local host

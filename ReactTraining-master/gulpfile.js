@@ -12,7 +12,7 @@ var hostFile = require('./hostNames.json');
 
 var config = {
 	port: hostFile.ReactPort,
-	devBaseUrl: hostFile.LocalHost,
+	devBaseUrl: hostFile.AmazonHostUrl,
 	paths: {
 		html: './src/*.html',
 		js: './src/**/*.js',
