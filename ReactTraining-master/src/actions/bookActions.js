@@ -4,8 +4,8 @@ import axios from 'axios'
 import { ErrorBoundary } from '../components/ErrorBoundary.js';
 var hostFile = require('./hostNames.json');
 
-//const hostData = hostFile.LocalHost + hostFile.LocalHostPort; //local host
-const hostData = hostFile.Host + hostFile.HostPort; //aws host
+//const hostData = hostFile.LocalHost + hostFile.NodePort; //local host
+const hostData = hostFile.AmazonHostUrl + hostFile.NodePort  ; //aws host
 
 //Here add all crud actions for Books
 console.log(hostData);

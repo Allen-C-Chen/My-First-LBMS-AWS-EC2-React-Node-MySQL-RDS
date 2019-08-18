@@ -1,12 +1,16 @@
 
 import Dispatcher from '../dispatcher/appDispatcher.js';
 import axios from 'axios'
-//Here add all crud actions for Authors
+var hostFile = require('./hostNames.json');
 
+//Here add all crud actions for Authors
+//const hostData = hostFile.LocalHost + hostFile.NodePort; //local host
+
+const hostData = hostFile.AmazonHostUrl + hostFile.NodePort  ; //aws host
 
 const AuthorsActions = {
     readAuthors: function(){
-        axios.get('http://localhost:3000/author')
+        axios.get(hostData + '/author')
         .then(res => {
             Dispatcher.dispatch({
             actionType: 'READ_AUTHOR_SUCCESS',
@@ -22,7 +26,7 @@ const AuthorsActions = {
         });
     },
     deleteAuthor: function(newAuthor){
-        axios.delete('http://localhost:3000/author/' + newAuthor.author_id)
+        axios.delete(hostData + '/author/' + newAuthor.author_id)
         .then(res => {
             //console.log(res);
             Dispatcher.dispatch({

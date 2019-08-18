@@ -1,0 +1,7 @@
+{
+   "LocalHost" : "http://localhost",
+   "LocalHostPort" : ":3000",
+   "AmazonHostUrl" : "http://18.188.115.117", 
+   "NodePort" : ":3000",
+   "ReactPort" : "9090"
+}

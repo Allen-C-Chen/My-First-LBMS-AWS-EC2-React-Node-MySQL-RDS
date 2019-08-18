@@ -8,10 +8,11 @@ var babelify = require("babelify");
 var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
 var lint = require('gulp-eslint');
+var hostFile = require('./hostNames.json');
 
 var config = {
-	port: 9090,
-	devBaseUrl: 'http://localhost',
+	port: hostFile.ReactPort,
+	devBaseUrl: hostFile.LocalHost,
 	paths: {
 		html: './src/*.html',
 		js: './src/**/*.js',
