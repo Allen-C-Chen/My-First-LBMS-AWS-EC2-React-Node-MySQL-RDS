@@ -54,7 +54,7 @@ const AuthorsActions = {
                 first_name: author.first_name,
                 last_name: author.last_name
             }
-            axios.put("http://localhost:3000/author", newAuthor)
+            axios.put(hostData + "/author", newAuthor)
                 .then(res => {
                     Dispatcher.dispatch({
                         actionType: "UPDATE_AUTHOR_SUCCESS",
@@ -78,7 +78,7 @@ const AuthorsActions = {
             });
         }
         else{
-            axios.post("http://localhost:3000/author", author)
+            axios.post(hostData + "/author", author)
             .then(res => {
                 var resAuthor = res.data;
                 Dispatcher.dispatch({

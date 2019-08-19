@@ -54,7 +54,7 @@ const BooksActions = {
                 title: book.title,
                 author: book.author
             }
-            axios.put("http://localhost:3000/book", newBook)
+            axios.put(hostData + "/book", newBook)
                 .then(res => {
                     Dispatcher.dispatch({
                         actionType: "UPDATE_BOOK_SUCCESS",
@@ -80,7 +80,7 @@ const BooksActions = {
             });
         }
         else{
-            axios.post("http://localhost:3000/book", book)
+            axios.post(hostData + "/book", book)
             .then(res => {
                 var resBook = res.data;
                 Dispatcher.dispatch({

@@ -26,15 +26,15 @@ export class ErrorBoundary extends React.Component {
    }
  
    render() {
-      console.log("DID THIS RUN 1");
+      //console.log("DID THIS RUN 1");
      if (this.state.hasError) {
-      console.log("DID THIS RUN 2");
+      //console.log("DID THIS RUN 2");
 
        // You can render any custom fallback UI
        //s
        return <h1>Something went wrong.</h1>;
      }
-     console.log("DID THIS RUN 3");
+     //console.log("DID THIS RUN 3");
 
      return this.props.children; 
    }
